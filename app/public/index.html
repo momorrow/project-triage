@@ -32,8 +32,25 @@
       <div id="mainContent" class="col-md">
 
         <div id="patientRecordApp">
-          <form>
-
+          <form @submit.prevent="handleCreateRecord">
+            <div class="form-group">
+              <label for="exampleInputEmail1">First Name</label>
+              <input type="text" class="form-control" id="firstname" v-model="formPatient.firstName" placeholder="">
+              <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Last Name</label>
+              <input type="text" class="form-control" v-model="formPatient.lastName" id="lastname" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">DOB</label>
+              <input type="date" class="form-control" id="dob" v-model="formPatient.dob" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Sex at Birth</label>
+              <input type="text" class="form-control" id="sex" v-model="formPatient.sexAtBirth" placeholder="">
+            </div>
+            <button type="submit" @click="" class="btn btn-primary">Create</button>
           </form>
           <table class="table table-sm table-hover">
             <thead>
